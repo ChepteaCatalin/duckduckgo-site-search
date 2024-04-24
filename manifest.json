@@ -11,7 +11,8 @@
   },
   "content_scripts": [
     {
-      "js": ["scripts/content.js"],
+      "js": ["scripts/search-site-btn.js", "scripts/content.js"],
+      "css": ["styles/search-site-btn.css"],
       "matches": ["https://duckduckgo.com/*"]
     }
   ]
