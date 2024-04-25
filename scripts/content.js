@@ -13,22 +13,19 @@ if (resultsSection) {
   }).observe(resultsSection, {childList: true, subtree: true});
 }
 
-function appendButton(link) {
-  const grandparentNode = link.parentNode.parentNode;
-  const btnExists = !!grandparentNode.querySelector(siteSearchBtnSelector);
-
-  if (btnExists) return;
+function appendButton(linkNode) {
+  const searchItem = linkNode.parentNode.parentNode;
+  if (buttonExistsFor(searchItem)) return;
 
   try {
-    var hostname = new URL(link.href).hostname;
+    var hostname = new URL(linkNode.href).hostname;
   } catch (error) {
     return;
   }
 
-  const button = createButton();
-  button.onclick = e => {
-    e.stopPropagation();
-    console.log(hostname);
-  };
-  grandparentNode.append(button);
+  searchItem.append(searchButton(hostname));
+}
+
+function buttonExistsFor(searchItem) {
+  return !!searchItem.querySelector(siteSearchBtnSelector);
 }
