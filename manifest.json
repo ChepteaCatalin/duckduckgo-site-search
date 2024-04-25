@@ -14,6 +14,7 @@
       "js": [
         "scripts/selectors.js",
         "scripts/search-site-btn.js",
+        "scripts/parse-results.js",
         "scripts/content.js"
       ],
       "css": ["styles/search-site-btn.css"],

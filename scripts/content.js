@@ -1,19 +1,19 @@
-const resultsSection = document.querySelector(resultsSectionSelector);
+var observer;
 
-if (resultsSection) {
-  var observer = new MutationObserver(mutations => {
+window.addEventListener('load', () => {
+  const resultsSection = document.querySelector(resultsSectionSelector);
+  if (!resultsSection) return;
+  parseResults(resultsSection.children);
+
+  observer = new MutationObserver(mutations => {
     mutations.forEach(mutation => {
       if (mutation.type !== 'childList' || !mutation.addedNodes.length) return;
-
-      Array.from(mutation.addedNodes)
-        .find(nodeOfTypes('OL', 'LI'))
-        ?.querySelectorAll(resultLinkSelector)
-        .forEach(appendSearchButton);
+      parseResults(mutation.addedNodes);
     });
   });
 
   observer.observe(resultsSection, {childList: true, subtree: true});
-}
+});
 
 window.addEventListener('beforeunload', () => {
   observer?.disconnect();
