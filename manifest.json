@@ -11,7 +11,12 @@
   },
   "content_scripts": [
     {
-      "js": ["scripts/search-site-btn.js", "scripts/content.js"],
+      "js": [
+        "scripts/selectors.js",
+        "scripts/mutation-observer.js",
+        "scripts/search-site-btn.js",
+        "scripts/content.js"
+      ],
       "css": ["styles/search-site-btn.css"],
       "matches": ["https://duckduckgo.com/*"]
     }
