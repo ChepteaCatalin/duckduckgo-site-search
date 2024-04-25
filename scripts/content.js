@@ -1,24 +1,29 @@
 const resultsSection = document.querySelector(resultsSectionSelector);
 
 if (resultsSection) {
-  const observer = new MutationObserver(mutations => {
+  new MutationObserver(mutations => {
     mutations.forEach(mutation => {
       if (mutation.type !== 'childList' || !mutation.addedNodes.length) return;
 
-      const list = Array.from(mutation.addedNodes).find(resultsList);
+      const list = Array.from(mutation.addedNodes).find(
+        nodeOfTypes('OL', 'LI')
+      );
       if (list) {
         const resultsLinks = list.querySelectorAll(resultLinkSelector);
         appendButtons(resultsLinks);
       }
     });
-  });
-
-  observer.observe(resultsSection, {childList: true, subtree: true});
+  }).observe(resultsSection, {childList: true, subtree: true});
 }
 
 function appendButtons(resultsLinks) {
   resultsLinks.forEach(result => {
+    const grandparentNode = result.parentNode.parentNode;
+    const btnExists = !!grandparentNode.querySelector(siteSearchBtnSelector);
+
+    if (btnExists) return;
+
     const button = createButton();
-    result.parentNode.parentNode.insertBefore(button, result.nextSibling);
+    grandparentNode.insertBefore(button, result.nextSibling);
   });
 }
