@@ -6,9 +6,9 @@ window.addEventListener('load', () => {
   parseResults(resultsSection.children);
 
   observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      if (mutation.type !== 'childList' || !mutation.addedNodes.length) return;
-      parseResults(mutation.addedNodes);
+    mutations.forEach(({type, addedNodes}) => {
+      if (type !== 'childList' || !addedNodes.length) return;
+      parseResults(addedNodes);
     });
   });
 
