@@ -3,12 +3,11 @@ function appendSearchButton(linkNode) {
   if (buttonExistsFor(searchItem)) return;
 
   try {
-    var hostname = new URL(linkNode.href).hostname;
+    const hostname = new URL(linkNode.href).hostname;
+    searchItem.append(createButton(hostname));
   } catch (error) {
     return;
   }
-
-  searchItem.append(createButton(hostname));
 }
 
 function buttonExistsFor(searchItem) {
