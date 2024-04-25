@@ -11,7 +11,7 @@ function querySite(hostname) {
       `site:${hostname}`
     );
   } else {
-    searchInput.value = searchInput.value + `+site:${hostname}`;
+    searchInput.value = searchInput.value + ` site:${hostname}`;
   }
 
   searchButton.click();
