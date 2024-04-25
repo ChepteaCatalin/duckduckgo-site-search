@@ -19,6 +19,6 @@ if (resultsSection) {
 function appendButtons(resultsLinks) {
   resultsLinks.forEach(result => {
     const button = createButton();
-    result.parentNode.insertBefore(button, result.nextSibling); //FIXME: are you sure?
+    result.parentNode.parentNode.insertBefore(button, result.nextSibling);
   });
 }
