@@ -13,7 +13,6 @@
     {
       "js": [
         "scripts/selectors.js",
-        "scripts/mutation-observer.js",
         "scripts/search-site-btn.js",
         "scripts/content.js"
       ],
