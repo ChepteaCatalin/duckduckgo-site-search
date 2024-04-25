@@ -13,6 +13,7 @@
     {
       "js": [
         "scripts/selectors.js",
+        "scripts/query-site.js",
         "scripts/search-site-btn.js",
         "scripts/parse-results.js",
         "scripts/content.js"
