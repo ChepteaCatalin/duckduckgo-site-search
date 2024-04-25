@@ -27,5 +27,9 @@ function createButton(hostname) {
     console.log(hostname);
   };
 
+  button.onmouseover = e => {
+    e.stopPropagation();
+  };
+
   return button;
 }
