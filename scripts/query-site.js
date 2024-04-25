@@ -5,14 +5,9 @@ function querySite(hostname) {
 
   const currentSiteQuery = searchInput.value.split('site:')[1];
 
-  if (currentSiteQuery) {
-    searchInput.value = searchInput.value.replace(
-      `site:${currentSiteQuery}`,
-      `site:${hostname}`
-    );
-  } else {
-    searchInput.value = searchInput.value + ` site:${hostname}`;
-  }
+  searchInput.value = currentSiteQuery
+    ? searchInput.value.replace(`site:${currentSiteQuery}`, `site:${hostname}`)
+    : `${searchInput.value} site:${hostname}`;
 
   searchButton.click();
 }

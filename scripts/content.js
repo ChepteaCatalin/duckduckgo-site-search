@@ -1,20 +1,19 @@
 var observer;
 
-window.addEventListener('load', () => {
+addEventListener('load', () => {
   const resultsSection = document.querySelector(resultsSectionSelector);
   if (!resultsSection) return;
   parseResults(resultsSection.children);
 
   observer = new MutationObserver(mutations => {
     mutations.forEach(({type, addedNodes}) => {
-      if (type !== 'childList' || !addedNodes.length) return;
-      parseResults(addedNodes);
+      if (type === 'childList' && addedNodes.length) parseResults(addedNodes);
     });
   });
 
   observer.observe(resultsSection, {childList: true, subtree: true});
 });
 
-window.addEventListener('beforeunload', () => {
+addEventListener('beforeunload', () => {
   observer?.disconnect();
 });

@@ -5,9 +5,7 @@ function appendSearchButton(linkNode) {
   try {
     const hostname = new URL(linkNode.href).hostname;
     searchItem.append(createButton(hostname));
-  } catch (error) {
-    return;
-  }
+  } catch (err) {}
 }
 
 function buttonExistsFor(searchItem) {
