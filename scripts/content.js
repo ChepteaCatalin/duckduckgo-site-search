@@ -5,10 +5,10 @@ if (resultsSection) {
     mutations.forEach(mutation => {
       if (mutation.type !== 'childList' || !mutation.addedNodes.length) return;
 
-      const list = [...mutation.addedNodes].find(resultsList);
+      const list = Array.from(mutation.addedNodes).find(resultsList);
       if (list) {
         const resultsLinks = list.querySelectorAll(resultLinkSelector);
-        appendButton([...resultsLinks]);
+        appendButtons(resultsLinks);
       }
     });
   });
