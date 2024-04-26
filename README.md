@@ -12,10 +12,12 @@ All the extension logic relies on the `content_scripts`. On the window `load` ev
 
 ## Known issues & limitations:
 
-1. No tests: unit and e2e tests would increase the reliability of the extension and reduce the number of bugs;
+1. No tests. Unit and e2e tests would increase the reliability of the extension and reduce the number of bugs;
 
-2. The extension is not packaged and published to the Chrome Web Store, making it harder to install, less secure and less performant;
+2. The extension is not packaged and not published to the Chrome Web Store, making it harder to install, less secure and less performant;
 
-3. It hasn't been tested for compatibility issues with Chrome versions other than `124.0.6367.79`.
+3. It hasn't been tested for compatibility issues with Google Chrome versions other than `124.0.6367.79`;
 
-4. The extension is highly dependent on the DOM of the `DuckDuckGo` site, so if they change something, the extension may not work properly. That's why the selectors have been moved to a separate single file to make them easier to change in such cases.
+4. The extension is highly dependent on the DOM of the `DuckDuckGo` site, so if they change something, the extension may not work properly. That's why the selectors have been moved to a separate single file to make them easier to change in such cases;
+
+5. It has limited functionality. It only works in DuckDuckGo, although it could be modified to work in multiple search engines. There is no way to customise the `Search this site` button, nor any way to easily toggle it.
