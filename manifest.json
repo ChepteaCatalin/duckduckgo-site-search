@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DuckDuckGo Site Search",
-  "description": "Adds \"Search this site\" button next to DuckDuckGo search results, allowing for refined searches within the domain of the result.",
+  "description": "Adds a \"Search this site\" button next to DuckDuckGo search results, allowing for refined searches within the domain of the result.",
   "version": "1.0.0",
   "icons": {
     "16": "images/icon-16.png",
