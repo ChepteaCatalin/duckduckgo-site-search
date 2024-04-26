@@ -4,7 +4,7 @@ Google Chrome extension which adds `Search this site` button next to the DuckDuc
 
 ## Installation:
 
-The extension is unpacked, so to load it, you need to follow the steps described [here](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked). Upload the root folder of this file when prompted.
+The extension is unpacked, so to load it, you need to follow the steps described [here](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked). Upload the root folder of the extension when prompted.
 
 ## How it works:
 
